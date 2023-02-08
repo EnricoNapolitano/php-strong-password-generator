@@ -1,3 +1,9 @@
+<?php
+// get user length
+$length = $_GET['length'];
+
+?>
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -26,10 +32,11 @@
         <form action="#" method="GET" class="d-flex justify-content-around">
             <label for="length">Lunghezza password:</label>
             <div>
-                <input id="length" name="length" type="number" step="1" required>
+                <input id="length" name="length" type="number" min="8" max="15" step="1" required>
                 <button class="btn btn-primary">INVIA</button>
             </div>
         </form>
+
     </div>
     
 </body>
