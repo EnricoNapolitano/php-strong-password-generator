@@ -12,21 +12,21 @@ function get_random_pass($n, $r){
         // condition where it is possible to repeat characters
         if($r === 'si') {
                 for($i = 0; $i < $n; $i++) {
-                $password .= chr(rand(65, 80)); //chr: function to get ASCII characters
+                $password .= chr(rand(65, 125)); //chr: function to get ASCII characters
                 }
 
         // instead here it is if it's not possible to repeat characters
         } else {
             $i = 0;
             while ($i < $n) {
-                $chr = chr(rand(65, 80));
+                $chr = chr(rand(65, 125));
                 if (!str_contains($password, $chr)) {
                     $password .= $chr;
                     $i++;
                 }
             }
         }
-
+        
         return $password;
     }
 }
