@@ -1,18 +1,14 @@
 <?php
+
 // get user length
 $length = $_GET['length'] ?? null;
 
-//function random password
-function get_random_pass($n){
-
-    //lenght comes from user
-    $pass_length = $n;
-    $password = '';
-    for($i = 0; $i < $pass_length; $i++) {
-    $password .= chr(rand(32, 126));
-  }
-  return $password;
-}
+//redirect to password page
+if($length){
+    session_start();
+    $_SESSION['length'] = $length;
+    header('Location: password_page.php'); 
+};
 
 ?>
 
@@ -42,13 +38,6 @@ function get_random_pass($n){
             <h1>STRONG PASSWORD GENERATOR</h1>
             <h2>Genera una password sicura</h2>
         </header>
-
-        <!-- alert -->
-        <div class="<?php if($length) echo 'alert alert-primary' ?>"> 
-            <?php if($length) : ?>
-                <?= get_random_pass($length) ?>
-            <?php endif; ?>
-        </div>
 
         <!-- form -->
         <form action="#" method="GET" class="d-flex justify-content-between">
