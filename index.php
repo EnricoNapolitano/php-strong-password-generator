@@ -30,7 +30,7 @@ if($length){
         <form action="#" method="GET" class="d-flex justify-content-between align-items-center">
             <label for="length">Lunghezza password:</label>
             <div class="d-flex align-items-center">
-                <input class="input-group-text" id="length" name="length" type="number" min="8" max="15" step="1" required>
+                <input class="input-group-text" id="length" name="length" type="number" min="8" max="15" step="1">
                 <button class="btn btn-primary ms-2">INVIA</button>
             </div>
         </form>
