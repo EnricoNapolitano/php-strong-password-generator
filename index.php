@@ -1,12 +1,14 @@
 <?php
 
-// get user length
+// get user input
 $length = $_GET['length'] ?? null;
+$repeat = $_GET['repeat'] ?? null;
 
 //redirect to password page
 if($length){
     session_start();
     $_SESSION['length'] = $length;
+    $_SESSION['repeat'] = $repeat;
     header('Location: password_page.php'); 
 };
 
@@ -40,13 +42,13 @@ if($length){
                 <span>Consentire ripetizione caratteri:</span>
                 <div class="d-flex">
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="repeat" id="yes_repeat">
+                        <input class="form-check-input" type="radio" name="repeat" id="yes_repeat" value="si" checked>
                         <label class="form-check-label pe-3" for="yes_repeat">
                             Si
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="repeat" id="no_repeat" checked>
+                        <input class="form-check-input" type="radio" name="repeat" id="no_repeat" value="no">
                         <label class="form-check-label" for="no_repeat">
                             No
                         </label>

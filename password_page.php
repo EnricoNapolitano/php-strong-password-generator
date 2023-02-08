@@ -2,6 +2,10 @@
 
  session_start();
  $_SESSION['length'];
+ $_SESSION['repeat'];
+
+ $length = $_SESSION['length'];
+ $repeat = $_SESSION['repeat'];
 
 include 'partials/functions.php';
 
@@ -17,7 +21,7 @@ include 'partials/functions.php';
 <div class="container wrap">
     <div class="alert alert-primary mt-5"> 
         <b class="pe-4">La tua password è: </b> 
-         <?php echo get_random_pass($_SESSION['length']) ?>
+         <?php echo get_random_pass($length, $repeat) ?>
         </div>
 
     <!-- btn to get back to homepage -->
