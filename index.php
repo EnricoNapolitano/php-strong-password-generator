@@ -18,7 +18,7 @@ if($length){
 <?php include 'partials/head.php' /***HEAD***/ ?>
 
 <body>
-    <div class="container wrap pt-5">
+    <div class="border container wrap p-5 mt-5">
 
         <!-- header -->
         <header class="text-center pb-5">
@@ -27,11 +27,11 @@ if($length){
         </header>
 
         <!-- form -->
-        <form action="#" method="GET" class="d-flex justify-content-between">
+        <form action="#" method="GET" class="d-flex justify-content-between align-items-center">
             <label for="length">Lunghezza password:</label>
-            <div>
-                <input id="length" name="length" type="number" min="8" max="15" step="1" required>
-                <button class="btn btn-primary">INVIA</button>
+            <div class="d-flex align-items-center">
+                <input class="input-group-text" id="length" name="length" type="number" min="8" max="15" step="1" required>
+                <button class="btn btn-primary ms-2">INVIA</button>
             </div>
         </form>
 
