@@ -1,6 +1,18 @@
 <?php
 // get user length
-$length = $_GET['length'];
+$length = $_GET['length'] ?? null;
+
+//function random password
+function get_random_pass($n){
+
+    //lenght comes from user
+    $pass_length = $n;
+    $password = '';
+    for($i = 0; $i < $pass_length; $i++) {
+    $password .= chr(rand(32, 126));
+  }
+  return $password;
+}
 
 ?>
 
@@ -26,7 +38,11 @@ $length = $_GET['length'];
         </header>
 
         <!-- alert -->
-        <div class="alert"> <?php //to do ?></div>
+        <div class="alert-success"> 
+            <?php if(!empty($length)) : ?>
+                <?= get_random_pass($length) ?>
+            <?php endif; ?>
+        </div>
 
         <!-- form -->
         <form action="#" method="GET" class="d-flex justify-content-around">
