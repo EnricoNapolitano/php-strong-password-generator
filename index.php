@@ -25,27 +25,33 @@ function get_random_pass($n){
     <title>Gneratore password</title>
     <!-- bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+    <style>
+        .wrap {
+            max-width: 800px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="container pt-5">
+    <div class="container wrap pt-5">
 
         <!-- header -->
-        <header class="text-center">
+        <header class="text-center pb-5">
             <h1>STRONG PASSWORD GENERATOR</h1>
             <h2>Genera una password sicura</h2>
         </header>
 
         <!-- alert -->
-        <div class="alert-success"> 
-            <?php if(!empty($length)) : ?>
+        <div class="<?php if($length) echo 'alert alert-primary' ?>"> 
+            <?php if($length) : ?>
                 <?= get_random_pass($length) ?>
             <?php endif; ?>
         </div>
 
         <!-- form -->
-        <form action="#" method="GET" class="d-flex justify-content-around">
+        <form action="#" method="GET" class="d-flex justify-content-between">
             <label for="length">Lunghezza password:</label>
             <div>
                 <input id="length" name="length" type="number" min="8" max="15" step="1" required>
